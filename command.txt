@@ -1,0 +1,8 @@
+Run mongodb:
+cd C:\Program Files\MongoDB\Server\3.4\bin\
+mongod.exe --dbpath C:\Users\Eric\Desktop\Code\COMP3322\AS2\ChatterBox\data
+
+Use mongodb shell:
+cd C:\Program Files\MongoDB\Server\3.4\bin\
+mongo.exe
+use assignment2

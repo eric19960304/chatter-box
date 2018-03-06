@@ -1,0 +1,135 @@
+header {
+    height: 200px;
+    width: 1000px;
+    border-style: solid;
+    border-width: 2px;
+}
+.left {
+    float:left;
+    height: 600px;
+    width: 300px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.friend_row{
+    display: block;
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+    text-align: center;
+}
+
+.friend_row:hover{
+    display: block;
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(192, 192, 192)!important;
+}
+
+.main {
+    display: inline-block;
+    height: 600px;
+    width: 700px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+
+.login{
+    height: 800px;
+    width: 1000px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.logoutButton{
+    float: right;
+}
+
+.icon{
+    display: inline-block;
+    height: 80px;
+}
+
+.icon img{
+    height: 80px;
+    max-width: 100px;
+    padding-left: 20px;
+}
+
+#header_title{
+    display: block;
+    text-align: center;
+}
+
+.username{
+    display: inline-block;
+    font-size: 30px;
+}
+
+#login_form{
+    height: 100%;
+    width: 100%;
+    padding-top: 200px;
+    text-align: center;
+}
+
+#profile_edit_fields{
+    padding-left: 20px;
+}
+
+#freidns_indicator{
+    height: 80px;
+    line-height: 80px;
+    padding-left: 20px;
+    font-size: 20px;
+    width: 100%;
+}
+
+.date{
+    text-align: center;
+}
+
+.time{
+    float: right;
+    margin-right: 20px;
+}
+
+.friend_dialog{
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+    margin-left: 30px;
+}
+
+.user_dialog{
+    display: inline-block;
+    width: 80%;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#message_form_wrapper{
+    width:100%;
+    text-align: center;
+}
+
+#message_input{
+    text-align: center;
+}
+
+#dialog{
+    height: 450px;
+    overflow: scroll;
+}
+
+.msg_row_wrapper{
+    width: 100%;
+}
+
+#profile_save_button{
+    margin-left: 100px;
+}

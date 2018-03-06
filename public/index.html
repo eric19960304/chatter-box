@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ChatterBox</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <link rel="stylesheet" href="/stylesheets/mystyles.css">
+    <script src="/javascripts/myscripts.js"></script>
+
+</head>
+
+<body ng-app="chatterBox" ng-controller="MainController" ng-init="load()">
+
+    <div ng-if="loginState">
+
+        <header>
+                <h1 id="header_title">ChatterBox</h1>
+
+            <div id="icon_username_wrapper" ng-click="showProfileView()">
+                <div class="icon">
+                    <img ng-src="{{user.icon}}"/>
+                </div>
+
+                <div class="username"> {{user.name}} </div>
+            </div>
+
+            <button ng-click="logout()" class="logoutButton">Logout</button>
+        </header>
+
+        <div id="friend_list" class="left">
+            <div id="freidns_indicator">friends:</div>
+            <div class="friend_row" id="{{friend.name}}" ng-repeat="friend in user.friends">
+                <div ng-if="friend.unread > 0"  ng-click="showChatView(friend)">
+                    {{friend.name}} ({{friend.unread}})
+                </div>
+                <div ng-if="friend.unread == 0" ng-click="showChatView(friend)">
+                        {{friend.name}}
+                    </div>
+            </div>
+        </div>
+
+        <div id="content" class="main">
+            <div ng-if="showChat">
+                <br>
+                <div class="icon">
+                    <img ng-src="{{friendInfo.icon}}"/>
+                </div>
+
+                <div class="username"> {{friendInfo.name}} ({{friendInfo.status}}) </div>
+                <div id="dialog" ng-init="setDialogBox()">
+                    <div ng-repeat="date in dates">
+                        <br>
+                        <div class="date">{{date}}</div>
+                        <br>
+                        <div ng-repeat="message in friendInfo.messages">
+                            <div class="msg_row_wrapper" ng-if="message.date==date">
+                                <div class="user_dialog" ng-if="message.senderId==user._id" ng-dblclick="deleteMessage(message._id)">
+                                    <span >{{message.message}}</span>
+                                </div>
+                                <div class="friend_dialog" ng-if="message.receiverId==user._id" ng-dblclick="deleteMessage(message._id)">
+                                    <span >{{message.message}}</span>
+                                </div>
+                                <span class="time">{{message.time}}</span>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="message_form_wrapper">
+                    <form ng-submit="postMessage(friendInfo._id, newMessage)">
+                        <input id="message_input" type="text" ng-model="newMessage" size="50" placeholder="Type a message here" >
+                        <input type="submit" style="display: none;"></input>
+                    </form>
+                </div>
+                
+                
+            </div>
+
+            <div ng-if="showProfile">
+                <br>
+                <div class="icon">
+                    <img ng-src="{{user.icon}}"/>
+                </div>
+
+                <div class="username"> {{user.name}} </div>
+                <br><br>
+                <div id="profile_edit_fields">
+                    Mobile number: <input type="text" ng-model="profile.mobileNumber"><br><br>
+                    Home number: <input type="text" ng-model="profile.homeNumber"><br><br>
+                    Mailing address: <input type="text" ng-model="profile.address"><br><br>
+                </div>
+                <br>
+                <button id="profile_save_button" ng-click="saveUserInfo(profile)">Save</button>
+
+            </div>
+        </div>
+        
+    </div>
+
+    <div ng-if="showLogin" class="login">
+        <h1 id="header_title">ChatterBox</h1>
+        <form id="login_form" ng-submit="login(loginForm)">
+            Username <input type="text" ng-model="loginForm.username"><br>
+            Password <input type="password" ng-model="loginForm.password"><br>
+            <input type="submit" value="Sign in"></input>
+        </form>
+    </div>
+
+</body>
+
+</html>
