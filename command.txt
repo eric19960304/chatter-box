@@ -1,8 +1,13 @@
 Run mongodb:
-cd C:\Program Files\MongoDB\Server\3.4\bin\
-mongod.exe --dbpath C:\Users\Eric\Desktop\Code\COMP3322\AS2\ChatterBox\data
+cd C:\Program Files\MongoDB\Server\3.6\bin\
+mongod.exe --dbpath C:\Users\Eric\Desktop\Projects\ChatterBox\data
 
 Use mongodb shell:
-cd C:\Program Files\MongoDB\Server\3.4\bin\
+cd C:\Program Files\MongoDB\Server\3.6\bin\
 mongo.exe
 use assignment2
+
+Run webserver:
+npm start
+
+browse: localhost:3000/
