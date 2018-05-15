@@ -1,13 +1,13 @@
 Run mongodb:
-cd C:\Program Files\MongoDB\Server\3.6\bin\
-mongod.exe --dbpath C:\Users\Eric\Desktop\Projects\ChatterBox\data
-
-Use mongodb shell:
-cd C:\Program Files\MongoDB\Server\3.6\bin\
-mongo.exe
-use assignment2
+"C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --dbpath C:\Users\Eric\Desktop\Projects\ChatterBox\data
 
 Run webserver:
 npm start
 
 browse: localhost:3000/
+
+
+Use mongodb shell:
+cd C:\Program Files\MongoDB\Server\3.6\bin\
+mongo.exe
+use assignment2
