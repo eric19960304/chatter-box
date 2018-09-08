@@ -1,5 +1,7 @@
 Run mongodb:
 "C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe" --dbpath C:\Users\Eric\Desktop\Projects\ChatterBox\data
+or
+mongod --dbpath /data/db
 
 Run webserver:
 npm start
